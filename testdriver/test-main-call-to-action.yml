@@ -1,0 +1,18 @@
+version: 4.1.33
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the main call to action button labeled "CLICK TO COPY".
+    commands:
+      - command: hover-text
+        text: CLICK TO COPY
+        description: main call to action button
+        action: click
+  - prompt: >-
+      Assert that the server address is copied to the clipboard.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the clipboard contains "mc.heroxwar.com"
