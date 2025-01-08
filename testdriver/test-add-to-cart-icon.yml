@@ -1,0 +1,17 @@
+version: 4.1.33
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the cart icon.
+    commands:
+      - command: hover-image
+        description: cart icon in the webpage content
+        action: click
+  - prompt: >-
+      Assert that the cart page or popup is opened.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: cart page or popup is visible
