@@ -1,0 +1,17 @@
+version: 4.1.33
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the Instagram icon.
+    commands:
+      - command: hover-image
+        description: Instagram icon on the webpage
+        action: click
+  - prompt: >-
+      Assert that the Instagram page for HeroXWar opens in a new tab.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: Instagram page for HeroXWar is open
